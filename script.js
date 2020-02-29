@@ -19,7 +19,8 @@ else{
 }
 function generatePassword(){
   var userPassword = "";
-  var incChars = ""; //creates a combined array using any returned booleans with a true value 
+  //creates a combined array using any returned booleans with a true value 
+  var incChars = ""; 
   if (incUpper == true) {
     incChars += upper;
   }
@@ -32,13 +33,14 @@ function generatePassword(){
   if (incSpecial == true) {
     incChars += special;
   }
- 
-  for (var i = 0; i < pwordLength; i++) { // continues generating random charaters from the incChars array until i = pword length
+ // continues generating random charaters from the incChars array until i = pwordLength
+  for (var i = 0; i < pwordLength; i++) { 
     userPassword += incChars.charAt(
       Math.floor(Math.random() * incChars.length)
     );
   }
-  return (userPassword); // Display the generated password
+  // Display the generated password
+  return (userPassword); 
 }
 
 // Write password to the #password input
