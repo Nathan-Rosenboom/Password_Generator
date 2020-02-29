@@ -1,14 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(" "); // Array of uppercase characters
-var lower = "abcdefghijklmnopqrstuvwxyz".split(" "); // Array of lowercase characters
-var num = "0123456789".split(" "); // Array of digits
-var special = "!#$%&')*+-./:;<=>?@[]^_`{}|~".split(" "); // Array of special characters
-var pwordLength = prompt("Enter password length. Must be a number betwen 8 - 128"); // Store user input as password length
-var incNum = confirm("Include numbers?"); // return boolean value for number array to be included in generator function
-var incUpper = confirm("Include uppercase letters?"); // return boolean value for uppercase array to be included in generator function
-var incLower = confirm("Include lowercase letters?"); // return boolean value for lowercase array to be included in generator function
-var incSpecial = confirm("Include special characters?"); // return boolean value for special array to be included in generator function
+// Declare arrays of character types
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(" ");
+var lower = "abcdefghijklmnopqrstuvwxyz".split(" ");
+var num = "0123456789".split(" ");
+var special = "!#$%&')*+-./:;<=>?@[]^_`{}|~".split(" ");
+var pwordLength = prompt("Enter password length. Must be a number betwen 8 - 128");
+// Check to make sure password is of a valid length
+if (pwordLength < 8 || pwordLength > 128){
+  alert("Please enter a valid number");
+}
+// If password length is valid prompt user for types of characters to include
+else{
+  var incNum = confirm("Include numbers?");
+  var incUpper = confirm("Include uppercase letters?");
+  var incLower = confirm("Include lowercase letters?");
+  var incSpecial = confirm("Include special characters?");
+}
 function generatePassword(){
   var userPassword = "";
   var incChars = ""; //creates a combined array using any returned booleans with a true value 
